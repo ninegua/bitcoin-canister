@@ -27,7 +27,7 @@ resolver = "2"
 
 [workspace.dependencies]
 assert_matches = "1.5.0"
-bitcoin = "0.28.1"
+bitcoin = { version = "0.28.1", default-features = false, features = ["no-std"] }
 byteorder = "1.4.3"
 canbench-rs = { version = "0.1.1" }
 candid = "0.10.6"
