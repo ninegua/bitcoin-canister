@@ -1,6 +1,8 @@
 //! Types used across crates.
 //! NOTE: These types are _not_ part of the interface.
 
+extern crate core2;
+
 use bitcoin::{
     util::uint::Uint256, Block as BitcoinBlock, Network as BitcoinNetwork,
     OutPoint as BitcoinOutPoint,
@@ -61,7 +63,7 @@ impl Block {
         Self::target_difficulty(network, self.header().target())
     }
 
-    pub fn consensus_encode(&self, buffer: &mut Vec<u8>) -> Result<usize, std::io::Error> {
+    pub fn consensus_encode(&self, buffer: &mut Vec<u8>) -> Result<usize, core2::io::Error> {
         use bitcoin::consensus::Encodable;
         self.block.consensus_encode(buffer)
     }
